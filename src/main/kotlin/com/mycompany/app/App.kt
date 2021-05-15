@@ -15,7 +15,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     val graphiteConfig: GraphiteConfig = object : GraphiteConfig {
         override fun host(): String {
@@ -62,9 +62,5 @@ fun main(args: Array<String>) {
     app.get("/future") { ctx ->
         log.error("Ping-Future")
         ctx.result(getFuture())
-    }
-
-    app.before { ctx ->
-        //log.error("Before Request")
     }
 }
